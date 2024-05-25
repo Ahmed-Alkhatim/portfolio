@@ -7,6 +7,7 @@
     @apply text-medium
   }
 }
+
 body {
   font-family: "IBM Plex Mono", monospace !important;
   background-color: #292F36;

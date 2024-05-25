@@ -2,6 +2,7 @@ import { Header } from "@/components";
 import MyInfo from "./MyInfo";
 import Hello from "./Hello";
 import Tools from "./Tools";
+import About from "./About";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <MyInfo/>
       <Hello />
       <Tools />
+      <About />
     </div>
   );
 }

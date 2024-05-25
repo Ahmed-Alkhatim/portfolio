@@ -6,6 +6,7 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage: {
+        "about" : "url('/about.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -14,6 +15,7 @@ module.exports = {
         'primary' : '#12F7D6',
         'primary-100' : '#98FAEC',
         'gray' : '#43454D',
+        'gray-2' : '#292F36',
         'black' : '#1A1E23'
       },
       fontSize  : {

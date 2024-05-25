@@ -29,12 +29,12 @@ export default function MyInfo() {
                         <span>alkhatim.com</span>
                     </li>
                 </ul>
-                <div className="space-x-2 space-y-2 text-[#000]">
-                    <button className="bg-primary px-[16px] rounded-full">HTML</button>
-                    <button className="bg-primary px-[16px] rounded-full">CSS</button>
-                    <button className="bg-primary px-[16px] rounded-full">JS</button>
-                    <button className="bg-primary px-[16px] rounded-full">React</button>
-                    <button className="bg-primary px-[16px] rounded-full">Vuejs</button>
+                <div className="text-[#000]">
+                    <button className="bg-primary px-[16px] rounded-full mt-2 mr-2">HTML</button>
+                    <button className="bg-primary px-[16px] rounded-full mt-2 mr-2">CSS</button>
+                    <button className="bg-primary px-[16px] rounded-full mt-2 mr-2">JS</button>
+                    <button className="bg-primary px-[16px] rounded-full mt-2 mr-2">React</button>
+                    <button className="bg-primary px-[16px] rounded-full mt-2 mr-2">Vuejs</button>
                 </div>
                 <button className="text-center px-[32px] py-[16px] bg-[#FFF] text-[#292F36] text-[20px] rounded-full font-medium ">Download CV <img src="/download.png" className="inline-block"/></button>
             </div>
