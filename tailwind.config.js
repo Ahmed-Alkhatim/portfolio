@@ -12,10 +12,12 @@ module.exports = {
       },
       colors: {
         'primary' : '#12F7D6',
-        'primary-100' : '#98FAEC'
+        'primary-100' : '#98FAEC',
+        'gray' : '#43454D'
       },
       fontSize  : {
-        'medium' : '14px',
+        'sm' : '14px',
+        'medium' : '16px',
         'lg' : '32px',
       }
     },

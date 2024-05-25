@@ -2,7 +2,7 @@ export default function Header() {
     
     return(
         <div className="container py-[24px]">
-            <h1 className="text-medium text-[#FFF] flex justify-between">
+            <h1 className="text-sm text-[#FFF] flex justify-between">
                 <div className="space-x-1">
                     <span className="text-primary">{'<C/>'}</span>
                     <span>Ahmed alkhatim</span>
