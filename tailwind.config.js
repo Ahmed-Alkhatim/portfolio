@@ -13,7 +13,8 @@ module.exports = {
       colors: {
         'primary' : '#12F7D6',
         'primary-100' : '#98FAEC',
-        'gray' : '#43454D'
+        'gray' : '#43454D',
+        'black' : '#1A1E23'
       },
       fontSize  : {
         'sm' : '14px',
