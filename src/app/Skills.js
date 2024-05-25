@@ -1,6 +1,13 @@
 import { Container } from "@/components"
 
 export default () => {
+
+    const languages = [
+        { name : 'HTML', icon : 'html.png', color : '#E54F26'},
+        { name : 'CSS', icon : 'css.png', color : '#28A9E0'},
+        { name : 'JS', icon : 'node.png', color : '#E7A020'},
+        { name : 'REACT', icon : 'react.png', color : '#28A9E0'}
+    ]
     return(
         <div className="bg-code bg-cover bg-center py-[64px]">
             <Container>
@@ -27,8 +34,20 @@ export default () => {
                                 <p className="text-medium">iOS·Android</p>
                             </div>
                         </div>
-                       
                     </div>
+                        <div className="flex flex-wrap justify-between">
+                            { languages.map( (language, index) => 
+                            <>
+                                <div className="text-center mt-5 ">
+                                    <div className={"w-[112px] h-[112px] rounded-full flex items-center justify-center " + 'bg-['+language.color+']'}>
+                                        <img className="inline-block" src={language.icon} alt=""/>
+                                    </div>
+                                    <div className={"text-medium font-bold " + 'text-['+language.color+']'}>{language.name}</div>
+                                </div>
+                                {index ==1 && <div className="w-full"></div>}
+                            </>
+                            )}
+                        </div>
                 </div>
             </Container>
         </div>
