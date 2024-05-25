@@ -6,6 +6,12 @@
   p {
     @apply text-medium
   }
+  input {
+    @apply block w-full bg-[#292F36] border-b border-primary focus:border-b 
+  }
+  input:focus-visible {
+   outline: unset;
+  }
 }
 
 

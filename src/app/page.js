@@ -5,10 +5,11 @@ import Tools from "./Tools";
 import About from "./About";
 import Skills from "./Skills";
 import Work from "./Work";
+import Contact from "./Contact";
 
 export default function Home() {
   return (
-    <div className="pb-[200px] space-y-[64px]">
+    <div className="space-y-[64px]">
       <Header />
       <MyInfo/>
       <Hello />
@@ -16,8 +17,9 @@ export default function Home() {
       <div>
         <About />
         <Skills />
+        <Work />
+        <Contact />
       </div>
-      <Work />
     </div>
   );
 }
