@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "about" : "url('/about.png')",
+        "code" : "url('/code.png')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -22,6 +23,7 @@ module.exports = {
         'sm' : '14px',
         'medium' : '16px',
         'lg' : '32px',
+        'xlg' : '64px'
       }
     },
   },

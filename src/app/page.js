@@ -3,6 +3,7 @@ import MyInfo from "./MyInfo";
 import Hello from "./Hello";
 import Tools from "./Tools";
 import About from "./About";
+import Skills from "./Skills";
 
 export default function Home() {
   return (
@@ -11,7 +12,10 @@ export default function Home() {
       <MyInfo/>
       <Hello />
       <Tools />
-      <About />
+      <div>
+        <About />
+        <Skills />
+      </div>
     </div>
   );
 }
