@@ -4,6 +4,7 @@ import Hello from "./Hello";
 import Tools from "./Tools";
 import About from "./About";
 import Skills from "./Skills";
+import Work from "./Work";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <About />
         <Skills />
       </div>
+      <Work />
     </div>
   );
 }
