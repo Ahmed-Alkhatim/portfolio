@@ -2,9 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  p {
+    @apply text-medium
+  }
+}
 body {
   font-family: "IBM Plex Mono", monospace !important;
   background-color: #292F36;
+  color: #FFF;
 }
 
 

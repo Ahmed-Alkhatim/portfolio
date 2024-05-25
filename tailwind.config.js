@@ -15,7 +15,8 @@ module.exports = {
         'primary-100' : '#98FAEC'
       },
       fontSize  : {
-        'medium' : '16px'
+        'medium' : '14px',
+        'lg' : '32px',
       }
     },
   },
