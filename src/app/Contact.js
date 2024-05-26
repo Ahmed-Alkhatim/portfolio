@@ -6,7 +6,7 @@ export default () => {
     return( 
     <div className="py-[64px]">
         <Container>
-            <div className="space-y-[64px] space-y-[32px] ">
+            <div className="space-y-[32px] ">
                 <div>
                     <div className="text-center">
                         <h3 className="test inline-block m-auto text-xlg text-primary border-b-2  border-primary">Contact</h3>
@@ -32,6 +32,9 @@ export default () => {
                         <label className="text-primary text-medium">Your message *</label>
                         <input placeholder="Enter your needs"/>
                     </div>
+                </div>
+                <div className="text-center mt-[64px]">
+                    <button className="text-center px-[32px] py-[16px] bg-[#12F7D6] text-[#292F36] text-[20px] rounded-full font-medium ">Send Message</button>
                 </div>
             </div>
         </Container>

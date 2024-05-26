@@ -1,4 +1,4 @@
-import { Header } from "@/components";
+import { Footer, Header } from "@/components";
 import MyInfo from "./MyInfo";
 import Hello from "./Hello";
 import Tools from "./Tools";
@@ -20,6 +20,7 @@ export default function Home() {
         <Work />
         <Contact />
       </div>
+      <Footer />
     </div>
   );
 }
