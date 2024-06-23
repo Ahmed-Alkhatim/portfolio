@@ -1,4 +1,4 @@
-import { Footer, Header } from "@/components";
+import { Container, Footer, Header } from "@/components";
 import MyInfo from "./MyInfo";
 import Hello from "./Hello";
 import Tools from "./Tools";
@@ -12,8 +12,12 @@ export default function Home() {
     <div className="space-y-[64px]">
       <Header />
       <MyInfo/>
-      <Hello />
-      <Tools />
+        <Container>
+        <div className="lap:flex">
+            <Hello />
+            <Tools />
+        </div>
+        </Container>
       <div>
         <About />
         <Skills />

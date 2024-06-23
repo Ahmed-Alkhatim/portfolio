@@ -4,11 +4,11 @@ export default function Header() {
         <div className="container py-[24px] border-b-2 border-gray">
             <h1 className="text-medium text-[#FFF] flex justify-between items-center ">
                
-                <div className="tablet:text-[20px] space-x-1">
+                <div className="lap:text-xlg tablet:text-[20px] space-x-1">
                     <span className="text-primary">{'<C/>'}</span>
                     <span>Ahmed alkhatim</span>
                 </div>
-                <ul className="flex space-x-3">
+                <ul className="lap:text-[24px] flex space-x-3">
                     <li className="text-primary">Home</li>
                     <li>Blogs</li>
                 </ul>

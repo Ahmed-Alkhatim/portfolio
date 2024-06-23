@@ -2,8 +2,11 @@ import { Container } from "@/components";
 
 export default function MyInfo() {
     return(
-        <Container>
+        <div>
+            <h1 className="lap:block hidden mb-[64px] text-xlg text-primary text-center">Developer</h1>
+
              <div className="m-auto w-[320px] p-[24px] pb-[36px] border-[4px] border-[#FFF] rounded-tl-[160px] rounded-br-[160px] space-y-[32px]">
+
                 <div className="text-center">
                     <div className="inline-block m-auto">
                         <img src="/profile.png" alt="portfolio"/>
@@ -11,6 +14,7 @@ export default function MyInfo() {
                     <h2 className="text-lg">Alkhatim</h2>
                     <p className="text-medium">Front-end developer</p>
                 </div>
+
                 <ul className="text-medium space-y-[16px]">
                     <li className="space-x-2">
                         <img src="/icon-mail.png" className="inline-block"/>
@@ -38,6 +42,6 @@ export default function MyInfo() {
                 </div>
                 <button className="text-center px-[32px] py-[16px] bg-[#FFF] text-[#292F36] text-[20px] rounded-full font-medium ">Download CV <img src="/download.png" className="inline-block"/></button>
             </div>
-        </Container>
+        </div>
     )
 }

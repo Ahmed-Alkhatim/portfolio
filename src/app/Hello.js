@@ -2,7 +2,7 @@ import { Container } from "@/components"
 
 export default () => {
     return(
-        <Container>
+        <div>
         <div className="space-y-[32px]">
             <div>
                 <span className="text-primary text-sm">{'<h1>'}</span>
@@ -19,9 +19,9 @@ export default () => {
                     I help business grow by crafting amazing web experiences. If you’re looking for a developer that likes to get stuff done,
                 </h2>
                 <span className="text-primary text-sm inline-block">{'</p>'}</span>
-                <h3 className="text-lg text-center text-primary text-bold">let’s talk <span className="inline-flex items-center justify-center bg-gray w-[40px] h-[40px] rounded-full "><img src = "/message.png" className="inline"/></span></h3>
+                <h3 className="text-lg text-primary text-bold">let’s talk <span className="inline-flex items-center justify-center bg-gray w-[40px] h-[40px] rounded-full "><img src = "/message.png" className="inline"/></span></h3>
             </div>
         </div>
-        </Container>
+        </div>
     )
 }
