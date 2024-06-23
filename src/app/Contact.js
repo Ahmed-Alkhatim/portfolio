@@ -11,10 +11,10 @@ export default () => {
                     <div className="text-center">
                         <h3 className="test inline-block m-auto text-xlg text-primary border-b-2  border-primary">Contact</h3>
                     </div>
-                    <p className="text-center mt-5"> I’m currently available for <br /> freelance/Fulltime work</p>
+                    <p className="text-center mt-5"> I’m currently available for <br className="tablet:hidden" /> freelance/Fulltime work</p>
                     
                 </div>
-                <div className=" m-auto text-primary text-[24px] py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
+                <div className="tablet:text-lg tablet:w-[420px] m-auto text-primary text-[24px] py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
                     Send me a message
                 </div>
                 {/* Form */}

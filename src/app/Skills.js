@@ -19,7 +19,7 @@ export default () => {
                         {/* <p className="text-center">I am striving to never stop <br /> learning and improving</p> */}
                         <p className="text-center mt-5"> Motivated by the fear of <br /> being average</p>
                     </div>
-                    <div className="space-y-[32px]">
+                    <div className=" tablet:flex justify-around tablet:space-y-0 space-y-[32px]">
                         <div className="text-black bg-[#98FAEC] border-l-[12px] border-[#0C73B8] rounded-[8px]">
                             <div className="px-[24px] py-[16px] space-y-2 text-center">
                                 <img src="/desktop.png" alt="" className="inline-block"/>
@@ -35,7 +35,7 @@ export default () => {
                             </div>
                         </div>
                     </div>
-                    <div className="flex flex-wrap justify-between">
+                    <div className="max-w-[400px] m-auto flex flex-wrap justify-between">
                                 <div className="text-center mt-5">
                                     <div className={"w-[112px] h-[112px] rounded-full flex items-center justify-center bg-[#E54F26]"}>
                                         <img className="inline-block" src='/html.png' alt=""/>
