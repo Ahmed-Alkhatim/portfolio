@@ -4,7 +4,7 @@ export default () => {
     return( <>
         <div className="bg-about bg-center bg-cover py-[64px]">
             <Container>
-                <div className="space-y-[32px]">
+                <div className="lap:px-[80px] space-y-[32px]">
                     <div className=" min-[600px]:inline-block  text-primary tablet:text-xlg text-lg py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
                         About me
                     </div>

@@ -3,8 +3,9 @@ import Container from "./Container";
 export default  function Footer(){
 
     return( 
-        <Container>
-              <div className="border-t-2 border-gray py-[32px] text-center text-medium space-y-[24px]">
+        <div className=" border-t-2 border-gray">
+            <Container>
+              <div className=" lap:flex lap:justify-between lap:items-center py-[32px] text-center text-medium lap:space-y-0 space-y-[24px]">
                 <div className="text-center">
                     <div className="inline-flex space-x-[32px]">
                         <div className="bg-[#98FAEC] w-[32px] h-[32px] rounded-full flex justify-center items-center">
@@ -18,12 +19,12 @@ export default  function Footer(){
                         </div>
                     </div>
                 </div>
-              
                 <p> &copy; {" " + new Date().getFullYear() +" ahmed alkhatim. All rights reserved."}</p>
                 <p>Design By <span className="text-primary">JohannLeon</span></p>
                 <p>Developed By <span className="text-primary">Ahmed alkhatim</span></p>
                 
             </div>
-        </Container>
+            </Container>
+        </div>
     )
 }

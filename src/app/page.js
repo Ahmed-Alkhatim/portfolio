@@ -13,7 +13,7 @@ export default function Home() {
       <Header />
       <MyInfo/>
         <Container>
-        <div className="lap:flex">
+        <div className="lap:flex lap:space-x-10">
             <Hello />
             <Tools />
         </div>

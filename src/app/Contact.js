@@ -6,7 +6,7 @@ export default () => {
     return( 
     <div className="py-[64px]">
         <Container>
-            <div className="space-y-[32px] ">
+            <div className="lap:space-y-[102px] tablet:space-y-[64px] space-y-[32px] ">
                 <div>
                     <div className="text-center">
                         <h3 className="test inline-block m-auto text-xlg text-primary border-b-2  border-primary">Contact</h3>
@@ -18,7 +18,7 @@ export default () => {
                     Send me a message
                 </div>
                 {/* Form */}
-                <div className="flex flex-wrap">
+                <div className="lap:w-[600px] flex flex-wrap lap:m-auto">
                     <div className="w-1/2 px-2 space-y-[24px]">
                         <label className="text-primary text-medium">Your name *</label>
                         <input placeholder="Enter your name"/>

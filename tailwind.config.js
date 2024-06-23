@@ -8,7 +8,7 @@ module.exports = {
         'tablet': '768px',
         // => @media (min-width: 768px) { ... }
 
-        'lap': '1280px',
+        'lap': '991px',
         // => @media (min-width: 1280px) { ... }
 
         'desk': '1920px',
