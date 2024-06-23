@@ -6,7 +6,7 @@ export default () => {
         <div className="space-y-[32px]">
             <div>
                 <span className="text-primary text-sm">{'<h1>'}</span>
-                <h2 className="text-lg ps-[16px]">
+                <h2 className="tablet:text-xlg text-lg ps-[16px]">
                     Hey, <br />
                     I am <span className="text-primary">Alkhatim</span> <br />
                     A Front-end developer <br />

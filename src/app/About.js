@@ -5,7 +5,7 @@ export default () => {
         <div className="bg-about bg-center bg-cover py-[64px]">
             <Container>
                 <div className="space-y-[32px]">
-                    <div className=" m-auto text-primary text-lg py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
+                    <div className=" min-[600px]:inline-block  text-primary tablet:text-xlg text-lg py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
                         About me
                     </div>
                     <div className="space-y-[16px] p-[24px] bg-gray-2 rounded-[40px]">
@@ -20,7 +20,7 @@ export default () => {
                         <span className="text-primary text-sm inline-block">{'</p>'}</span>
                     </div>
                 </div>
-                <img className = "m-auto mt-[64px]" src="/work.png" alt=""/>
+                <img className = "m-auto mt-[64px] tablet:w-[462px]" src="/work.png" alt=""/>
             </Container>
         </div>
     </>)
