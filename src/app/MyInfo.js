@@ -3,7 +3,7 @@ import { Container } from "@/components";
 export default function MyInfo() {
     return(
         <Container>
-             <div className="p-[24px] pb-[36px] border-[4px] border-[#FFF] rounded-tl-[160px] rounded-br-[160px] space-y-[32px]">
+             <div className="m-auto w-[320px] p-[24px] pb-[36px] border-[4px] border-[#FFF] rounded-tl-[160px] rounded-br-[160px] space-y-[32px]">
                 <div className="text-center">
                     <div className="inline-block m-auto">
                         <img src="/profile.png" alt="portfolio"/>
