@@ -3,8 +3,9 @@ import { Container } from "@/components"
 export default () => {
     return( <>
         <div className="bg-about bg-center bg-cover py-[64px]">
-            <Container>
-                <div className="lap:px-[80px] space-y-[32px]">
+        <Container>
+            <div className="desk:flex">
+                <div className="desk:w-2/3 lap:px-[80px] space-y-[32px]">
                     <div className=" min-[600px]:inline-block  text-primary tablet:text-xlg text-lg py-[16px] px-[40px] text-center border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px]">
                         About me
                     </div>
@@ -22,8 +23,11 @@ export default () => {
                         <span className="text-primary text-sm inline-block">{'</p>'}</span>
                     </div>
                 </div>
-                <img className = "m-auto mt-[64px] tablet:w-[462px]" src="/work.png" alt=""/>
-            </Container>
+                <div className="desk:w-1/3">
+                    <img className = "m-auto mt-[64px] tablet:w-[462px]" src="/work.png" alt=""/>
+                </div>
+            </div>
+        </Container>
         </div>
     </>)
 }

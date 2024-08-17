@@ -11,7 +11,7 @@ export default () => {
     return(
         <div className="bg-code bg-cover bg-center py-[64px]">
             <Container>
-                <div className="space-y-[64px] ">
+                <div className="max-w-[1200px] m-auto space-y-[64px] ">
                     <div>
                         <div className="text-center">
                             <h3 className="test inline-block m-auto text-xlg text-primary border-b-2  border-primary">Skills</h3>
