@@ -1,8 +1,10 @@
 
+'use client'
 import { Container } from "@/components"
+import { useState } from "react"
 
 export default () => {
-
+    const [ hovered, setHovered] = useState(false)
     return( 
     <div className="py-[64px]">
         <Container>
@@ -34,7 +36,7 @@ export default () => {
                     </div>
                 </div>
                 <div className="text-center mt-[64px]">
-                    <button className="text-center px-[32px] py-[16px] bg-[#12F7D6] text-[#292F36] text-[20px] rounded-full font-medium ">Send Message</button>
+                    <button className="text-center px-[32px] py-[16px] bg-[#12F7D6] text-[#292F36] text-[20px] rounded-full font-medium " onMouseOver={ () => setHovered(true)} onMouseLeave={() => setHovered(false)}>{ !hovered ? "Send Message" : "Available soon"}</button>
                 </div>
             </div>
         </Container>

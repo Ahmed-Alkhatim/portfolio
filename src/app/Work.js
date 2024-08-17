@@ -58,7 +58,7 @@ const Project = ({ project }) => {
                 />
             </div>
             <div className="m-2 space-y-1">
-                <h6 >{ project.name + hovered}</h6>
+                <h6 >{ project.name }</h6>
                 <p className="text-primary text-md">{ project.skills }</p>
             </div>
         </div>

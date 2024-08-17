@@ -16,9 +16,9 @@ export default function Header() {
                     <li>Blogs</li>
                 </ul> */}
                 <div className="hidden tablet:flex space-x-[32px]">
-                    <img src="/icons/discord.svg" alt=""/>
-                    <img src="/icons/github.svg" alt=""/>
-                    <img src="/icons/instagram.svg" alt=""/>
+                    <a href = "https://linkedin.com/in/ahmed-alkhatim" target="_blank" ><img src="/icons/discord.svg" alt="linkedin"/></a>
+                    <a href = "https://github.com/Ahmed-Alkhatim" target="_blank"><img src="/icons/github.svg" alt="github"/></a>
+                    <a href = "https://instagram.com/ahmed__alkhatim" target="_blank"><img src="/icons/instagram.svg" alt="instagram"/></a>
                 </div>
             </h1>
         </Container>
