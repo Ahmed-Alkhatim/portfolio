@@ -2,9 +2,9 @@ import { Container } from "@/components"
 
 export default () => {
     return(
-        <div className="desk:pl-20 space-y-[32px]">
+        <div className="mb-10 desk:pl-20 space-y-[32px]">
             <div>
-                <span className="text-primary text-sm">{'<h1>'}</span>
+                <span className=" text-primary text-sm">{'<h1>'}</span>
                 <h2 className="lap:leading-[67px] tablet:text-xlg text-lg ps-[16px]">
                     Hey, <br />
                     I am <span className="text-primary">Alkhatim</span> <br />
