@@ -2,8 +2,7 @@ import { Container } from "@/components"
 
 export default () => {
     return(
-        <div>
-        <div className="space-y-[32px]">
+        <div className="desk:pl-20 space-y-[32px]">
             <div>
                 <span className="text-primary text-sm">{'<h1>'}</span>
                 <h2 className="lap:leading-[67px] tablet:text-xlg text-lg ps-[16px]">
@@ -21,7 +20,6 @@ export default () => {
                 <span className="text-primary text-sm inline-block">{'</p>'}</span>
                 <h3 className="text-lg text-primary text-bold">let’s talk <span className="inline-flex items-center justify-center bg-gray w-[40px] h-[40px] rounded-full "><img src = "/message.png" className="inline"/></span></h3>
             </div>
-        </div>
         </div>
     )
 }

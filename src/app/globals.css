@@ -109,3 +109,12 @@ body {
   font-weight: 700;
   font-style: italic;
 }
+
+.transform-to-bottom {
+  transform: translateY(calc((100% - 200px) * -1));
+}
+
+.transform-to-top {
+  transform: translateY(0);
+}
+

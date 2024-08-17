@@ -11,17 +11,19 @@ export default function Home() {
   return (
     <div className="space-y-[64px]">
       <Header />
-      <MyInfo/>
         <Container>
-        <div className="lap:flex lap:space-x-10">
-            <Hello />
-            <Tools />
+        <div className="desk:flex justify-between items-center">
+          <MyInfo/>
+          <div className="lap:flex lap:mt-20 lap:space-x-10">
+              <Hello />
+              <Tools />
+          </div>
         </div>
         </Container>
       <div>
         <About />
-        <Skills />
         <Work />
+        <Skills />
         <Contact />
       </div>
       <Footer />

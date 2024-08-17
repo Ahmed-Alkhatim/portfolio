@@ -3,7 +3,7 @@ import { Container } from "@/components";
 export default function MyInfo() {
     return(
         <div>
-            <h1 className="lap:block hidden mb-[64px] text-xlg text-primary text-center">Developer</h1>
+            <h1 className="lap:block mb-[64px] text-xlg text-primary text-center">Developer</h1>
 
              <div className="m-auto w-[320px] p-[24px] pb-[36px] border-[4px] border-[#FFF] rounded-tl-[160px] rounded-br-[160px] space-y-[32px]">
 

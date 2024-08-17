@@ -15,7 +15,10 @@ module.exports = {
         // => @media (min-width: 1920px) { ... }
     },
     extend: {
-      backgroundImage: {
+      transitionDuration: {
+        '5000' : "8000ms"
+      },
+      backgroundImage: { 
         "about" : "url('/about.png')",
         "code" : "url('/code.png')",
         "text" : "url('/text.png')",
