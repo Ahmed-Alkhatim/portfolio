@@ -489,7 +489,7 @@ export default function MyInfo() {
                         </div>
                     </div>
                     
-                    {contactData.map((contact, index) => (
+                    {/* {contactData.map((contact, index) => (
                         <div key={index} className="group/item">
                             <div className="flex items-center justify-between hover:bg-gradient-to-r hover:from-primary/10 hover:to-transparent p-4 rounded-lg transition-all duration-300 border border-transparent hover:border-primary/30 cursor-pointer">
                                 <div className="flex items-center space-x-4">
@@ -523,7 +523,7 @@ export default function MyInfo() {
                                 </div>
                             </div>
                         </div>
-                    ))}
+                    ))} */}
                     
                     {/* Enhanced phone number with special effects */}
                     <div className="group/item">
@@ -557,17 +557,17 @@ export default function MyInfo() {
 
                 {/* Revolutionary tech stack with advanced animations */}
                 <div className="relative z-10">
-                    <div className="flex items-center justify-between mb-4">
+                    {/* <div className="flex items-center justify-between mb-4">
                         <p className="text-primary text-sm font-mono">// Technology stack</p>
                         <div className="flex items-center space-x-2 text-xs text-gray-400 font-mono">
                             <span>version: 2024.1.0</span>
                             <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
                         </div>
-                    </div>
+                    </div> */}
                     
                     <div className="space-y-4">
                         {/* Frontend technologies */}
-                        <div className="group/section">
+                        {/* <div className="group/section">
                             <div className="flex items-center justify-between mb-3">
                                 <div className="text-xs text-gray-400 font-mono">Frontend Technologies:</div>
                                 <div className="text-xs text-blue-400 font-mono">⚡ Active</div>
@@ -585,10 +585,10 @@ export default function MyInfo() {
                                     </span>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Backend technologies */}
-                        <div className="group/section">
+                        {/* <div className="group/section">
                             <div className="flex items-center justify-between mb-3">
                                 <div className="text-xs text-gray-400 font-mono">Backend Technologies:</div>
                                 <div className="text-xs text-green-400 font-mono">🚀 Deployed</div>
@@ -606,7 +606,7 @@ export default function MyInfo() {
                                     </span>
                                 ))}
                             </div>
-                        </div>
+                        </div> */}
 
                         {/* Developer philosophy */}
                         <div className="bg-gradient-to-r from-black/40 to-gray-900/40 rounded-lg p-4 border-l-4 border-primary backdrop-blur-sm">
