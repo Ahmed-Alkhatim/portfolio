@@ -255,14 +255,15 @@ const Project = ({ project, index, onHover, isHovered, isVisible }) => {
             onMouseEnter={() => onHover(index)}
             onMouseLeave={() => onHover(null)}
         >
-            <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] overflow-hidden border border-primary/20 backdrop-blur-sm transition-all duration-500 group-hover:scale-105 group-hover:border-primary/40 group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:-translate-y-2">
-                {/* Enhanced project image with overlay */}
-                <div className="relative h-[200px] overflow-hidden">
-                    <img 
+            <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] overflow-hidden border border-primary/20 backdrop-blur-sm transition-all duration-500 group-hover:scale-105 group-hover:border-primary/40 group-hover:shadow-2xl group-hover:shadow-primary/20 group-hover:-translate-y-2">                {/* Enhanced project image with smooth hover scroll effect */}
+                <div className="relative h-[200px] overflow-hidden bg-gray-800 project-image-container">                    <img 
                         src={`/projects/${project.img}`} 
                         alt={project.name}
-                        className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                        className="project-scroll-image"
                     />
+                    
+                    {/* Subtle gradient overlay for better visual depth */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                     
                     {/* Animated project type badge */}
                     <div className="absolute top-4 left-4 transform transition-all duration-300 group-hover:scale-110">

@@ -1,8 +1,8 @@
 'use client'
 import { Container } from "@/components"
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo, memo } from 'react';
 
-export default () => {
+const Skills = memo(() => {
     const [visibleSkills, setVisibleSkills] = useState(new Set());
     const [animatedProgress, setAnimatedProgress] = useState({});
     const [currentTime, setCurrentTime] = useState(new Date());
@@ -31,16 +31,14 @@ export default () => {
         }, 100);
 
         return () => clearInterval(interval);
-    }, []);
-
-    // Update time
+    }, []);    // Update time less frequently for better performance
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(new Date());
-        }, 1000);
+        }, 5000); // Update every 5 seconds instead of every second
         return () => clearInterval(interval);
-    }, []);    // Typing effect for skill descriptions
-    const typeDescription = (skillIndex, description) => {
+    }, []);// Typing effect for skill descriptions with cleanup
+    const typeDescription = useCallback((skillIndex, description) => {
         let index = 0;
         const interval = setInterval(() => {
             if (index <= description.length) {
@@ -53,10 +51,13 @@ export default () => {
                 clearInterval(interval);
             }
         }, 50);
-    };
+        
+        // Store interval for cleanup
+        return interval;
+    }, []);
 
-    // Typing effect for framework descriptions
-    const typeFrameworkDescription = (frameworkIndex, description) => {
+    // Typing effect for framework descriptions with cleanup
+    const typeFrameworkDescription = useCallback((frameworkIndex, description) => {
         let index = 0;
         const interval = setInterval(() => {
             if (index <= description.length) {
@@ -69,10 +70,12 @@ export default () => {
                 clearInterval(interval);
             }
         }, 50);
-    };
+        
+        return interval;
+    }, []);
 
-    // Typing effect for database descriptions
-    const typeDatabaseDescription = (databaseIndex, description) => {
+    // Typing effect for database descriptions with cleanup
+    const typeDatabaseDescription = useCallback((databaseIndex, description) => {
         let index = 0;
         const interval = setInterval(() => {
             if (index <= description.length) {
@@ -85,7 +88,9 @@ export default () => {
                 clearInterval(interval);
             }
         }, 50);
-    };    // Intersection Observer for progressive loading
+        
+        return interval;
+    }, []);    // Optimized Intersection Observer for progressive loading
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -98,14 +103,14 @@ export default () => {
                         if (skillIndex) {
                             setVisibleSkills(prev => new Set([...prev, parseInt(skillIndex)]));
                             
-                            // Animate progress bar
+                            // Animate progress bar with debounced timing
                             const skillLevel = entry.target.dataset.skillLevel;
                             setTimeout(() => {
                                 setAnimatedProgress(prev => ({
                                     ...prev,
                                     [skillIndex]: parseInt(skillLevel)
                                 }));
-                            }, parseInt(skillIndex) * 200);
+                            }, parseInt(skillIndex) * 150); // Reduced delay
                         }
                         
                         if (frameworkIndex) {
@@ -115,24 +120,35 @@ export default () => {
                         if (databaseIndex) {
                             setVisibleDatabases(prev => new Set([...prev, parseInt(databaseIndex)]));
                         }
+                        
+                        // Stop observing after animation to reduce overhead
+                        observer.unobserve(entry.target);
                     }
                 });
             },
-            { threshold: 0.3 }
+            { 
+                threshold: 0.2, // Reduced threshold for earlier trigger
+                rootMargin: '50px' // Add margin for smoother animations
+            }
         );
 
-        const skillElements = document.querySelectorAll('[data-skill-index]');
-        const frameworkElements = document.querySelectorAll('[data-framework-index]');
-        const databaseElements = document.querySelectorAll('[data-database-index]');
-        
-        skillElements.forEach(el => observer.observe(el));
-        frameworkElements.forEach(el => observer.observe(el));
-        databaseElements.forEach(el => observer.observe(el));
+        // Use setTimeout to defer observer setup
+        const timeoutId = setTimeout(() => {
+            const skillElements = document.querySelectorAll('[data-skill-index]');
+            const frameworkElements = document.querySelectorAll('[data-framework-index]');
+            const databaseElements = document.querySelectorAll('[data-database-index]');
+            
+            skillElements.forEach(el => observer.observe(el));
+            frameworkElements.forEach(el => observer.observe(el));
+            databaseElements.forEach(el => observer.observe(el));
+        }, 100);
 
-        return () => observer.disconnect();
-    }, []);
-
-    const skills = [
+        return () => {
+            clearTimeout(timeoutId);
+            observer.disconnect();
+        };
+    }, []);// Memoize skill data to prevent unnecessary re-renders
+    const skills = useMemo(() => [
         { 
             name: 'HTML5', 
             icon: 'html.png', 
@@ -158,67 +174,59 @@ export default () => {
             name: 'Node.js', 
             icon: 'node.png', 
             color: '#68A063',
-            level: 85,            description: 'Server-side JavaScript runtime'
+            level: 85,
+            description: 'Server-side JavaScript runtime'
         }
-    ]
+    ], []);
 
-    const frameworks = [
+    const frameworks = useMemo(() => [
         { name: 'React', level: 92, color: '#28A9E0', description: 'Component-based UI library', icon: 'react.png' },
         { name: 'Next.js', level: 85, color: '#000000', description: 'React production framework', icon: 'next.svg' },
-        { name: 'Vue.js', level: 80, color: '#4FC08D', description: 'Progressive JavaScript framework', icon: 'react.png' }, // Using react icon as placeholder for Vue
+        { name: 'Vue.js', level: 80, color: '#4FC08D', description: 'Progressive JavaScript framework', icon: 'react.png' },
         { name: 'Express.js', level: 82, color: '#68A063', description: 'Fast Node.js web framework', icon: 'node.png' },
-        { name: 'TypeScript', level: 85, color: '#3178C6', description: 'Typed JavaScript superset', icon: 'react.png' }, // Using react icon as placeholder for TypeScript
+        { name: 'TypeScript', level: 85, color: '#3178C6', description: 'Typed JavaScript superset', icon: 'react.png' },
         { name: 'Tailwind CSS', level: 90, color: '#06B6D4', description: 'Utility-first CSS framework', icon: 'css.png' }
-    ]
+    ], []);
 
-    const databases = [
-        { name: 'MongoDB', level: 78, color: '#47A248', description: 'NoSQL document database', icon: 'node.png' }, // Using node icon as placeholder
-        { name: 'MySQL', level: 75, color: '#4479A1', description: 'Relational database system', icon: 'node.png' }, // Using node icon as placeholder
-        { name: 'Git', level: 88, color: '#F05032', description: 'Version control system', icon: 'node.png' } // Using node icon as placeholder
-    ];
+    const databases = useMemo(() => [
+        { name: 'MongoDB', level: 78, color: '#47A248', description: 'NoSQL document database', icon: 'node.png' },
+        { name: 'MySQL', level: 75, color: '#4479A1', description: 'Relational database system', icon: 'node.png' },
+        { name: 'Git', level: 88, color: '#F05032', description: 'Version control system', icon: 'node.png' }
+    ], []);
 
     return(
-        <div className="bg-code bg-cover bg-center py-[64px] relative overflow-hidden">
-            {/* Enhanced animated background */}
+        <div className="bg-code bg-cover bg-center py-[64px] relative overflow-hidden">            {/* Simplified animated background for better performance */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="text-primary text-xs font-mono leading-relaxed p-8 whitespace-pre-wrap animate-fade-in-slow">
                     {`class Skills {
     constructor() {
         this.experience = "3+ years";
-        this.expertise = ["Frontend", "Backend", "Full Stack"];
+        this.expertise = ["Frontend", "Backend"];
         this.passion = "continuous learning";
-        this.lastUpdate = "${currentTime.toLocaleString()}";
-    }
-    
-    getSkillLevel(skill) {
-        return this.skills[skill] || "learning...";
     }
     
     async improveSkills() {
         while(this.passion === "continuous learning") {
             await this.practice();
-            await this.learn();
             this.level++;
         }
     }
 }`}
                 </div>
-            </div>
-
-            {/* Floating code particles */}
+            </div>{/* Reduce floating particles for better performance */}
             <div className="absolute inset-0 pointer-events-none">
-                {[...Array(20)].map((_, i) => (
+                {[...Array(8)].map((_, i) => (
                     <div
                         key={i}
                         className="absolute text-primary/20 font-mono text-xs animate-float-slow"
                         style={{
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`,
-                            animationDelay: `${i * 0.5}s`,
-                            animationDuration: `${3 + Math.random() * 2}s`
+                            animationDelay: `${i * 1}s`,
+                            animationDuration: `${4 + Math.random() * 2}s`
                         }}
                     >
-                        {['{}', '[]', '()', '<>', '/>', '=&gt;', '&amp;&amp;', '||'][Math.floor(Math.random() * 8)]}
+                        {['{}', '[]', '()', '<>', '/>', '=>'][Math.floor(Math.random() * 6)]}
                     </div>
                 ))}
             </div>
@@ -394,19 +402,17 @@ export default () => {
                                                     {skill.level >= 90 ? '🏆 Expert' : skill.level >= 80 ? '🥇 Advanced' : skill.level >= 70 ? '🥈 Proficient' : '🥉 Intermediate'}
                                                 </span>
                                             </div>
-                                        </div>
-
-                                        {/* Hover particles */}
+                                        </div>                                        {/* Reduce hover particles for better performance */}
                                         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            {[...Array(6)].map((_, i) => (
+                                            {[...Array(3)].map((_, i) => (
                                                 <div
                                                     key={i}
                                                     className="absolute w-1 h-1 rounded-full animate-ping"
                                                     style={{
                                                         backgroundColor: skill.color,
-                                                        top: `${20 + Math.random() * 60}%`,
-                                                        left: `${20 + Math.random() * 60}%`,
-                                                        animationDelay: `${i * 0.2}s`
+                                                        top: `${30 + Math.random() * 40}%`,
+                                                        left: `${30 + Math.random() * 40}%`,
+                                                        animationDelay: `${i * 0.4}s`
                                                     }}
                                                 ></div>
                                             ))}
@@ -489,19 +495,17 @@ export default () => {
                                                     {framework.level >= 90 ? '🏆 Expert' : framework.level >= 80 ? '🥇 Advanced' : framework.level >= 70 ? '🥈 Proficient' : '🥉 Intermediate'}
                                                 </span>
                                             </div>
-                                        </div>
-
-                                        {/* Hover particles */}
+                                        </div>                                        {/* Reduce hover particles for better performance */}
                                         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            {[...Array(6)].map((_, i) => (
+                                            {[...Array(3)].map((_, i) => (
                                                 <div
                                                     key={i}
                                                     className="absolute w-1 h-1 rounded-full animate-ping"
                                                     style={{
                                                         backgroundColor: framework.color,
-                                                        top: `${20 + Math.random() * 60}%`,
-                                                        left: `${20 + Math.random() * 60}%`,
-                                                        animationDelay: `${i * 0.2}s`
+                                                        top: `${30 + Math.random() * 40}%`,
+                                                        left: `${30 + Math.random() * 40}%`,
+                                                        animationDelay: `${i * 0.4}s`
                                                     }}
                                                 ></div>
                                             ))}
@@ -586,19 +590,17 @@ export default () => {
                                                     {db.level >= 90 ? '🏆 Expert' : db.level >= 80 ? '🥇 Advanced' : db.level >= 70 ? '🥈 Proficient' : '🥉 Intermediate'}
                                                 </span>
                                             </div>
-                                        </div>
-
-                                        {/* Hover particles */}
+                                        </div>                                        {/* Reduce hover particles for better performance */}
                                         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                            {[...Array(6)].map((_, i) => (
+                                            {[...Array(3)].map((_, i) => (
                                                 <div
                                                     key={i}
                                                     className="absolute w-1 h-1 rounded-full animate-ping"
                                                     style={{
                                                         backgroundColor: db.color,
-                                                        top: `${20 + Math.random() * 60}%`,
-                                                        left: `${20 + Math.random() * 60}%`,
-                                                        animationDelay: `${i * 0.2}s`
+                                                        top: `${30 + Math.random() * 40}%`,
+                                                        left: `${30 + Math.random() * 40}%`,
+                                                        animationDelay: `${i * 0.4}s`
                                                     }}
                                                 ></div>
                                             ))}
@@ -607,9 +609,12 @@ export default () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
-                </div>
+                    </div>                </div>
             </Container>
         </div>
     )
-}
+});
+
+Skills.displayName = 'Skills';
+
+export default Skills;

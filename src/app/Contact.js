@@ -32,13 +32,11 @@ export default () => {
         }, 100);
 
         return () => clearInterval(interval);
-    }, []);
-
-    // Update time
+    }, []);    // Update time less frequently for better performance
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentTime(new Date());
-        }, 1000);
+        }, 5000); // Update every 5 seconds
         return () => clearInterval(interval);
     }, []);
 
@@ -147,22 +145,20 @@ export default () => {
     }
 }`}
                 </div>
-            </div>
-
-            {/* Floating contact particles */}
+            </div>            {/* Reduce floating contact particles for better performance */}
             <div className="absolute inset-0 pointer-events-none">
-                {[...Array(15)].map((_, i) => (
+                {[...Array(8)].map((_, i) => (
                     <div
                         key={i}
                         className="absolute text-primary/20 font-mono text-xs animate-float-slow"
                         style={{
                             top: `${Math.random() * 100}%`,
                             left: `${Math.random() * 100}%`,
-                            animationDelay: `${i * 0.7}s`,
-                            animationDuration: `${4 + Math.random() * 2}s`
+                            animationDelay: `${i * 1}s`,
+                            animationDuration: `${5 + Math.random() * 2}s`
                         }}
                     >
-                        {['@', '#', '&', '*', '+', '=', '~', '$'][Math.floor(Math.random() * 8)]}
+                        {['@', '#', '&', '*'][Math.floor(Math.random() * 4)]}
                     </div>
                 ))}
             </div>
@@ -519,18 +515,16 @@ export default () => {
                                     // Last active: {currentTime.toLocaleString()}
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Floating particles */}
+                        </div>                        {/* Reduce floating particles for better performance */}
                         <div className="absolute inset-0 pointer-events-none opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                            {[...Array(8)].map((_, i) => (
+                            {[...Array(4)].map((_, i) => (
                                 <div
                                     key={i}
                                     className="absolute w-1 h-1 bg-primary rounded-full animate-ping"
                                     style={{
-                                        top: `${20 + Math.random() * 60}%`,
-                                        left: `${20 + Math.random() * 60}%`,
-                                        animationDelay: `${i * 0.3}s`
+                                        top: `${30 + Math.random() * 40}%`,
+                                        left: `${30 + Math.random() * 40}%`,
+                                        animationDelay: `${i * 0.5}s`
                                     }}
                                 ></div>
                             ))}
