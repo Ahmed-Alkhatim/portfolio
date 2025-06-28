@@ -109,10 +109,8 @@ export default () => {
             animateCounter('years', 3);
             animateCounter('satisfaction', 100);
         }
-    }, [isVisible]);
-
-    return( 
-        <div id="work-section" className="bg-gray-2 py-[64px] relative overflow-hidden">
+    }, [isVisible]);    return( 
+        <div id="work-section" className="bg-gray-2 py-[32px] tablet:py-[48px] lap:py-[64px] relative overflow-hidden">
             {/* Enhanced animated background code pattern */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="text-primary text-xs font-mono leading-relaxed p-8 whitespace-pre-wrap animate-fade-in-slow">
@@ -136,48 +134,46 @@ export default () => {
                 <div className="absolute top-20 right-20 text-primary/20 animate-float-slow">{'{ }'}</div>
                 <div className="absolute bottom-32 left-16 text-primary/20 animate-float-fast">{'[ ]'}</div>
                 <div className="absolute top-40 left-40 text-primary/20 animate-floating">{'< />'}</div>
-            </div>
-
-            <Container>
-                <div className="space-y-[64px] relative z-10">
+            </div>            <Container>
+                <div className="space-y-[32px] tablet:space-y-[48px] lap:space-y-[64px] relative z-10">
                     {/* Enhanced header with animations */}
-                    <div className={`text-center space-y-4 transition-all duration-1000 ${
+                    <div className={`text-center space-y-3 tablet:space-y-4 transition-all duration-1000 ${
                         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                     }`}>
                         <div className="relative inline-block group">
-                            <h3 className="text-primary text-xlg py-[16px] px-[40px] border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px] bg-black/30 backdrop-blur-sm relative overflow-hidden hover:shadow-lg hover:shadow-primary/20 transition-all duration-500">
-                                <span className="relative z-10 flex items-center gap-2">
-                                    <span className="font-mono text-sm opacity-70 group-hover:opacity-100 transition-opacity">{'</'}</span>
+                            <h3 className="text-primary text-lg tablet:text-xlg py-[12px] tablet:py-[16px] px-[24px] tablet:px-[40px] border-[3px] tablet:border-[4px] border-primary rounded-tl-[30px] tablet:rounded-tl-[40px] rounded-br-[30px] tablet:rounded-br-[40px] bg-black/30 backdrop-blur-sm relative overflow-hidden hover:shadow-lg hover:shadow-primary/20 transition-all duration-500">
+                                <span className="relative z-10 flex items-center gap-1 tablet:gap-2">
+                                    <span className="font-mono text-xs tablet:text-sm opacity-70 group-hover:opacity-100 transition-opacity">{'</'}</span>
                                     <span className="group-hover:text-yellow-300 transition-colors">Work</span>
-                                    <span className="font-mono text-sm opacity-70 group-hover:opacity-100 transition-opacity">{'>'}</span>
+                                    <span className="font-mono text-xs tablet:text-sm opacity-70 group-hover:opacity-100 transition-opacity">{'>'}</span>
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 {/* Pulse border effect */}
-                                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-tl-[40px] rounded-br-[40px] animate-pulse transition-all duration-300"></div>
+                                <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/50 rounded-tl-[30px] tablet:rounded-tl-[40px] rounded-br-[30px] tablet:rounded-br-[40px] animate-pulse transition-all duration-300"></div>
                             </h3>
-                            <div className="text-primary/70 text-sm mt-2 font-mono opacity-0 animate-fade-in-slow" style={{animationDelay: '0.3s'}}>
+                            <div className="text-primary/70 text-xs tablet:text-sm mt-2 font-mono opacity-0 animate-fade-in-slow" style={{animationDelay: '0.3s'}}>
                                 // Featured projects
                             </div>
                         </div>
-                        <p className={`text-medium text-gray-300 max-w-md mx-auto transition-all duration-700 ${
+                        <p className={`text-sm tablet:text-medium text-gray-300 max-w-md mx-auto transition-all duration-700 ${
                             isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
                         }`} style={{transitionDelay: '0.2s'}}>
                             I had the pleasure of working with these awesome projects.<br />
-                            <span className="text-primary font-mono text-sm hover:text-yellow-300 transition-colors">
+                            <span className="text-primary font-mono text-xs tablet:text-sm hover:text-yellow-300 transition-colors">
                                 portfolio.showcase();
                             </span>
                         </p>
                     </div>
 
                     {/* Enhanced project filter with animations */}
-                    <div className={`flex justify-center space-x-4 transition-all duration-700 ${
+                    <div className={`flex flex-wrap justify-center gap-2 tablet:gap-4 transition-all duration-700 ${
                         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-5 opacity-0'
                     }`} style={{transitionDelay: '0.4s'}}>
                         {filterTypes.map((type, index) => (
                             <button
                                 key={type}
                                 onClick={() => setFilter(type)}
-                                className={`px-6 py-3 rounded-lg font-mono text-sm transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg ${
+                                className={`px-4 tablet:px-6 py-2 tablet:py-3 rounded-lg font-mono text-xs tablet:text-sm transition-all duration-300 border-2 hover:scale-105 hover:shadow-lg ${
                                     filter === type
                                         ? 'bg-primary text-black border-primary shadow-lg shadow-primary/30 scale-105'
                                         : 'bg-transparent text-primary border-primary/30 hover:border-primary/60 hover:bg-primary/10'
@@ -193,7 +189,7 @@ export default () => {
                             </button>
                         ))}
                     </div>                    {/* Enhanced projects grid with staggered animations */}
-                    <div className="grid tablet:grid-cols-2 lap:grid-cols-3 gap-8">
+                    <div className="grid grid-cols-1 tablet:grid-cols-2 lap:grid-cols-3 gap-6 tablet:gap-8">
                         {filteredProjects.map((project, index) => (
                             <Project 
                                 key={`${filter}-${index}`}
@@ -207,39 +203,39 @@ export default () => {
                     </div>
 
                     {/* Enhanced project stats with animated counters */}
-                    <div className={`bg-gradient-to-r from-gray-2 to-black/30 rounded-[20px] p-8 border border-primary/20 backdrop-blur-sm group hover:border-primary/40 transition-all duration-500 ${
+                    <div className={`bg-gradient-to-r from-gray-2 to-black/30 rounded-[15px] tablet:rounded-[20px] p-6 tablet:p-8 border border-primary/20 backdrop-blur-sm group hover:border-primary/40 transition-all duration-500 ${
                         isVisible ? 'scale-100 opacity-100' : 'scale-95 opacity-0'
                     }`} style={{transitionDelay: '0.8s'}}>
-                        <div className="grid tablet:grid-cols-3 gap-8 text-center">
-                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-4 transition-all duration-300">
-                                <div className="text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
+                        <div className="grid grid-cols-1 tablet:grid-cols-3 gap-6 tablet:gap-8 text-center">
+                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-3 tablet:p-4 transition-all duration-300">
+                                <div className="text-2xl tablet:text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
                                     {animatedCounter.projects}+
                                 </div>
-                                <div className="text-gray-300 font-mono">Projects Completed</div>
+                                <div className="text-gray-300 font-mono text-sm tablet:text-base">Projects Completed</div>
                                 <div className="w-full bg-gray-700/50 rounded-full h-1 mt-2 opacity-0 group-hover/stat:opacity-100 transition-opacity">
                                     <div className="h-full bg-primary rounded-full animate-progress-fill"></div>
                                 </div>
                             </div>
-                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-4 transition-all duration-300">
-                                <div className="text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
+                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-3 tablet:p-4 transition-all duration-300">
+                                <div className="text-2xl tablet:text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
                                     {animatedCounter.years}+
                                 </div>
-                                <div className="text-gray-300 font-mono">Years Experience</div>
+                                <div className="text-gray-300 font-mono text-sm tablet:text-base">Years Experience</div>
                                 <div className="w-full bg-gray-700/50 rounded-full h-1 mt-2 opacity-0 group-hover/stat:opacity-100 transition-opacity">
                                     <div className="h-full bg-green-400 rounded-full animate-progress-fill"></div>
                                 </div>
                             </div>
-                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-4 transition-all duration-300">
-                                <div className="text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
+                            <div className="space-y-2 group/stat hover:bg-primary/5 rounded-lg p-3 tablet:p-4 transition-all duration-300">
+                                <div className="text-2xl tablet:text-3xl font-bold text-primary font-mono group-hover/stat:text-yellow-300 transition-colors">
                                     {animatedCounter.satisfaction}%
                                 </div>
-                                <div className="text-gray-300 font-mono">Client Satisfaction</div>
+                                <div className="text-gray-300 font-mono text-sm tablet:text-base">Client Satisfaction</div>
                                 <div className="w-full bg-gray-700/50 rounded-full h-1 mt-2 opacity-0 group-hover/stat:opacity-100 transition-opacity">
                                     <div className="h-full bg-yellow-400 rounded-full animate-progress-fill"></div>
                                 </div>
                             </div>
                         </div>
-                    </div>                </div>
+                    </div></div>
             </Container>
         </div>
     )
@@ -309,15 +305,13 @@ const Project = ({ project, index, onHover, isHovered, isVisible }) => {
 
                     {/* Glowing border effect */}
                     <div className="absolute inset-0 border-2 border-primary/0 group-hover:border-primary/30 rounded-t-[20px] transition-all duration-500"></div>
-                </div>
-
-                {/* Enhanced project info with animations */}
-                <div className="p-6 space-y-4">
+                </div>                {/* Enhanced project info with animations */}
+                <div className="p-4 tablet:p-6 space-y-3 tablet:space-y-4">
                     <div>
-                        <h6 className="text-lg font-bold text-white mb-2 group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1">
+                        <h6 className="text-base tablet:text-lg font-bold text-white mb-2 group-hover:text-primary transition-all duration-300 transform group-hover:translate-x-1">
                             {project.name}
                         </h6>
-                        <p className="text-gray-400 text-sm group-hover:text-gray-300 transition-colors duration-300">
+                        <p className="text-gray-400 text-xs tablet:text-sm group-hover:text-gray-300 transition-colors duration-300">
                             {project.description}
                         </p>
                     </div>
@@ -327,7 +321,7 @@ const Project = ({ project, index, onHover, isHovered, isVisible }) => {
                         <div className="text-primary text-xs font-mono group-hover:text-yellow-300 transition-colors">
                             // Tech Stack
                         </div>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 tablet:gap-2">
                             {project.skills.map((skill, skillIndex) => (
                                 <span 
                                     key={skillIndex}
@@ -343,11 +337,11 @@ const Project = ({ project, index, onHover, isHovered, isVisible }) => {
                     </div>
 
                     {/* Enhanced project actions with animations */}
-                    <div className="flex space-x-3 pt-2">
-                        <button className="flex-1 bg-primary/20 hover:bg-primary/30 text-primary py-2 px-4 rounded-lg font-mono text-sm transition-all duration-300 border border-primary/30 hover:border-primary/60 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1">
+                    <div className="flex flex-col tablet:flex-row space-y-2 tablet:space-y-0 tablet:space-x-3 pt-2">
+                        <button className="flex-1 bg-primary/20 hover:bg-primary/30 text-primary py-2 px-3 tablet:px-4 rounded-lg font-mono text-xs tablet:text-sm transition-all duration-300 border border-primary/30 hover:border-primary/60 hover:scale-105 hover:shadow-lg transform hover:-translate-y-1">
                             View Details
                         </button>
-                        <button className="flex-1 bg-transparent hover:bg-primary hover:text-black text-primary py-2 px-4 rounded-lg font-mono text-sm transition-all duration-300 border border-primary hover:scale-105 hover:shadow-lg transform hover:-translate-y-1">
+                        <button className="flex-1 bg-transparent hover:bg-primary hover:text-black text-primary py-2 px-3 tablet:px-4 rounded-lg font-mono text-xs tablet:text-sm transition-all duration-300 border border-primary hover:scale-105 hover:shadow-lg transform hover:-translate-y-1">
                             Live Demo
                         </button>
                     </div>

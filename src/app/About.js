@@ -35,13 +35,11 @@ export default () => {
             }, 100);
             return () => clearTimeout(timeout);
         }
-    }, [isVisible, currentIndex, codeText]);
-
-    return( <>
-        <div id="about-section" className="bg-about bg-center bg-cover py-[64px] relative overflow-hidden">
+    }, [isVisible, currentIndex, codeText]);    return( <>
+        <div id="about-section" className="bg-about bg-center bg-cover py-[32px] tablet:py-[48px] lap:py-[64px] relative overflow-hidden">
             {/* Enhanced animated background code pattern overlay */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
-                <div className="text-primary text-xs font-mono leading-relaxed p-8 whitespace-pre-wrap animate-fade-in-slow">
+                <div className="text-primary text-xs font-mono leading-relaxed p-4 tablet:p-8 whitespace-pre-wrap animate-fade-in-slow">
                     {`function aboutMe() {
     const developer = {
         name: "Ahmed Alkhatim",

@@ -195,7 +195,7 @@ const Skills = memo(() => {
     ], []);
 
     return(
-        <div className="bg-code bg-cover bg-center py-[64px] relative overflow-hidden">            {/* Simplified animated background for better performance */}
+        <div className="bg-code bg-cover bg-center py-[32px] tablet:py-[48px] lap:py-[64px] relative overflow-hidden">            {/* Simplified animated background for better performance */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="text-primary text-xs font-mono leading-relaxed p-8 whitespace-pre-wrap animate-fade-in-slow">
                     {`class Skills {
@@ -234,48 +234,47 @@ const Skills = memo(() => {
             <Container>
                 <div className="max-w-[1200px] m-auto space-y-[64px] relative z-10">
                     {/* Enhanced animated header */}
-                    <div className="text-center space-y-6">
-                        {/* Terminal-style header */}
-                        <div className="bg-gradient-to-r from-black/80 to-gray-900/80 rounded-lg border border-primary/30 p-6 backdrop-blur-sm max-w-2xl mx-auto">
-                            <div className="flex items-center justify-between mb-4">
-                                <div className="flex items-center space-x-2">
-                                    <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                                    <div className="w-3 h-3 bg-yellow-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
-                                    <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
-                                    <span className="ml-4 text-primary text-sm font-mono">~/skills.json</span>
+                    <div className="text-center space-y-6">                        {/* Terminal-style header */}
+                        <div className="bg-gradient-to-r from-black/80 to-gray-900/80 rounded-lg border border-primary/30 p-4 tablet:p-6 backdrop-blur-sm max-w-2xl mx-auto">
+                            <div className="flex items-center justify-between mb-3 tablet:mb-4">
+                                <div className="flex items-center space-x-1 tablet:space-x-2">
+                                    <div className="w-2 h-2 tablet:w-3 tablet:h-3 bg-red-500 rounded-full animate-pulse"></div>
+                                    <div className="w-2 h-2 tablet:w-3 tablet:h-3 bg-yellow-500 rounded-full animate-pulse" style={{animationDelay: '0.5s'}}></div>
+                                    <div className="w-2 h-2 tablet:w-3 tablet:h-3 bg-green-500 rounded-full animate-pulse" style={{animationDelay: '1s'}}></div>
+                                    <span className="ml-2 tablet:ml-4 text-primary text-xs tablet:text-sm font-mono">~/skills.json</span>
                                 </div>
-                                <div className="text-xs text-gray-400 font-mono">
+                                <div className="text-xs text-gray-400 font-mono hidden tablet:block">
                                     {currentTime.toLocaleTimeString()}
                                 </div>
                             </div>
-                            <div className="font-mono text-sm text-green-400 mb-2">
+                            <div className="font-mono text-xs tablet:text-sm text-green-400 mb-2">
                                 <span className="text-gray-400">$</span> {typingText}
                                 <span className="animate-pulse text-white">|</span>
                             </div>
                         </div>
 
                         <div className="relative inline-block">
-                            <h3 className="text-primary text-xlg py-[16px] px-[40px] border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px] bg-black/30 backdrop-blur-sm relative overflow-hidden group">
-                                <span className="relative z-10 flex items-center gap-2">
-                                    <span className="font-mono text-sm opacity-70 animate-pulse">{'</'}</span>
+                            <h3 className="text-primary text-lg tablet:text-xlg py-[12px] tablet:py-[16px] px-[24px] tablet:px-[40px] border-[3px] tablet:border-[4px] border-primary rounded-tl-[30px] tablet:rounded-tl-[40px] rounded-br-[30px] tablet:rounded-br-[40px] bg-black/30 backdrop-blur-sm relative overflow-hidden group">
+                                <span className="relative z-10 flex items-center gap-1 tablet:gap-2">
+                                    <span className="font-mono text-xs tablet:text-sm opacity-70 animate-pulse">{'</'}</span>
                                     Skills
-                                    <span className="font-mono text-sm opacity-70 animate-pulse">{'>'}</span>
+                                    <span className="font-mono text-xs tablet:text-sm opacity-70 animate-pulse">{'>'}</span>
                                 </span>
                                 <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                                 {/* Animated border */}
-                                <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-primary via-transparent to-primary opacity-0 group-hover:opacity-30 transition-opacity duration-500 animate-spin rounded-tl-[40px] rounded-br-[40px]" style={{animationDuration: '3s'}}></div>
+                                <div className="absolute inset-0 border-2 border-transparent bg-gradient-to-r from-primary via-transparent to-primary opacity-0 group-hover:opacity-30 transition-opacity duration-500 animate-spin rounded-tl-[30px] tablet:rounded-tl-[40px] rounded-br-[30px] tablet:rounded-br-[40px]" style={{animationDuration: '3s'}}></div>
                             </h3>
-                            <div className="text-primary/70 text-sm mt-2 font-mono animate-pulse">// Technical expertise level: Pro</div>
+                            <div className="text-primary/70 text-xs tablet:text-sm mt-2 font-mono animate-pulse">// Technical expertise level: Pro</div>
                         </div>
 
-                        <div className="space-y-3">
-                            <p className="text-medium text-gray-300 max-w-md mx-auto animate-fade-in-slow">
+                        <div className="space-y-2 tablet:space-y-3">
+                            <p className="text-sm tablet:text-medium text-gray-300 max-w-md mx-auto animate-fade-in-slow">
                                 Motivated by the fear of being average.<br />
-                                <span className="text-primary font-mono text-sm">console.log("Always learning, always growing");</span>
+                                <span className="text-primary font-mono text-xs tablet:text-sm">console.log("Always learning, always growing");</span>
                             </p>
-                            <div className="flex items-center justify-center space-x-4 text-xs font-mono text-gray-500">
+                            <div className="flex flex-col tablet:flex-row items-center justify-center space-y-1 tablet:space-y-0 tablet:space-x-4 text-xs font-mono text-gray-500">
                                 <div className="flex items-center space-x-1">
-                                    <div className="w-2 h-2 bg-green-400 rounded-full animate-ping"></div>
+                                    <div className="w-1.5 h-1.5 tablet:w-2 tablet:h-2 bg-green-400 rounded-full animate-ping"></div>
                                     <span>Live Skills Dashboard</span>
                                 </div>
                                 <span>|</span>
