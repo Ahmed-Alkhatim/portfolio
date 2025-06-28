@@ -6,7 +6,8 @@ export default () => {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
-        message: ''    })
+        message: ''
+    })
     const [isSubmitting, setIsSubmitting] = useState(false)
     const [focusedField, setFocusedField] = useState(null)
 
@@ -20,7 +21,6 @@ export default () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         setIsSubmitting(true)
-        // Simulate form submission
         setTimeout(() => {
             setIsSubmitting(false)
         }, 2000)
@@ -49,7 +49,6 @@ export default () => {
 
     return( 
         <div className="py-[64px] relative overflow-hidden">
-            {/* Background code pattern */}
             <div className="absolute inset-0 opacity-5 pointer-events-none">
                 <div className="text-primary text-xs font-mono leading-relaxed p-8 whitespace-pre-wrap">
                     {`async function sendMessage(data) {
@@ -72,7 +71,6 @@ export default () => {
 
             <Container>
                 <div className="space-y-[64px] relative z-10">
-                    {/* Enhanced header */}
                     <div className="text-center space-y-4">
                         <div className="relative inline-block">
                             <h3 className="text-primary text-xlg py-[16px] px-[40px] border-[4px] border-primary rounded-tl-[40px] rounded-br-[40px] bg-black/30 backdrop-blur-sm relative overflow-hidden group">
@@ -92,7 +90,6 @@ export default () => {
                     </div>
 
                     <div className="lap:grid lap:grid-cols-2 gap-12 space-y-8 lap:space-y-0">
-                        {/* Contact Information */}
                         <div className="space-y-8">
                             <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] p-8 border border-primary/20 backdrop-blur-sm">
                                 <h4 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
@@ -127,7 +124,6 @@ export default () => {
                                 <div className="mt-6 text-primary font-mono text-sm">{'}'}</div>
                             </div>
 
-                            {/* Social Links */}
                             <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] p-8 border border-primary/20 backdrop-blur-sm">
                                 <h4 className="text-lg font-bold text-white mb-4 font-mono">
                                     // Social connections
@@ -158,7 +154,6 @@ export default () => {
                             </div>
                         </div>
 
-                        {/* Contact Form */}
                         <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] p-8 border border-primary/20 backdrop-blur-sm">
                             <h4 className="text-xl font-bold text-white mb-6 font-mono">
                                 <span className="text-primary">function</span> sendMessage() {'{'}
@@ -235,15 +230,15 @@ export default () => {
                         </div>
                     </div>
 
-                    {/* Call to Action */}
                     <div className="text-center bg-gradient-to-r from-gray-2 to-black/30 rounded-[20px] p-8 border border-primary/20 backdrop-blur-sm">
                         <div className="space-y-4">
-                            <h4 className="text-2xl font-bold text-white">Ready to start your project?</h4>                            <p className="text-gray-300 font-mono">
-                                <span className="text-primary">if</span> (project.isAwesome) {`{`}
+                            <h4 className="text-2xl font-bold text-white">Ready to start your project?</h4>
+                            <p className="text-gray-300 font-mono">
+                                <span className="text-primary">if</span> (project.isAwesome) <span className="text-gray-400">{'{'}</span>
                                 <br />
-                                &nbsp;&nbsp;<span className="text-primary">return</span> "Let's build it together!";
+                                &nbsp;&nbsp;<span className="text-primary">return</span> <span className="text-yellow-300">"Let's build it together!"</span>;
                                 <br />
-                                {`}`}
+                                <span className="text-gray-400">{'}'}</span>
                             </p>
                             <div className="flex items-center justify-center space-x-2 text-green-500">
                                 <div className="w-3 h-3 bg-green-500 rounded-full animate-pulse"></div>

@@ -6,6 +6,7 @@ import About from "./About";
 import Skills from "./Skills";
 import Work from "./Work";
 import Contact from "./Contact";
+import LinkedIn from "./LinkedIn";
 
 export default function Home() {
   return (
@@ -19,11 +20,11 @@ export default function Home() {
               <Tools />
           </div>
         </div>
-        </Container>
-      <div>
+        </Container>      <div>
         <About />
         <Work />
         <Skills />
+        <LinkedIn />
         <Contact />
       </div>
       <Footer />
