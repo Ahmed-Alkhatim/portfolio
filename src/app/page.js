@@ -23,8 +23,8 @@ export default function Home() {
         </Container>      <div>
         <About />
         <Work />
-        <Skills />
         <LinkedIn />
+        <Skills />
         <Contact />
       </div>
       <Footer />

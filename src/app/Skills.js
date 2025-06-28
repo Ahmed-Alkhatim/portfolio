@@ -1,7 +1,6 @@
 import { Container } from "@/components"
 
-export default () => {
-    const skills = [
+export default () => {    const skills = [
         { 
             name: 'HTML5', 
             icon: 'html.png', 
@@ -21,24 +20,29 @@ export default () => {
             icon: 'node.png', 
             color: '#E7A020',
             level: 88,
-            description: 'ES6+ & modern patterns'
+            description: 'ES6+ & modern patterns & Browser APIs'
         },
         { 
-            name: 'React', 
-            icon: 'react.png', 
-            color: '#28A9E0',
-            level: 92,
-            description: 'Hooks & state management'
+            name: 'Node.js', 
+            icon: 'node.png', 
+            color: '#68A063',
+            level: 85,            description: 'Server-side JavaScript runtime'
         }
     ]
 
     const frameworks = [
-        { name: 'Next.js', level: 85, color: '#000000' },
-        { name: 'Vue.js', level: 80, color: '#4FC08D' },
-        { name: 'TypeScript', level: 85, color: '#3178C6' },
-        { name: 'Tailwind CSS', level: 90, color: '#06B6D4' },
-        { name: 'Node.js', level: 75, color: '#68A063' },
-        { name: 'Git', level: 88, color: '#F05032' }
+        { name: 'React', level: 92, color: '#28A9E0', description: 'Component-based UI library', icon: 'react.png' },
+        { name: 'Next.js', level: 85, color: '#000000', description: 'React production framework', icon: 'next.svg' },
+        { name: 'Vue.js', level: 80, color: '#4FC08D', description: 'Progressive JavaScript framework', icon: 'react.png' }, // Using react icon as placeholder for Vue
+        { name: 'Express.js', level: 82, color: '#68A063', description: 'Fast Node.js web framework', icon: 'node.png' },
+        { name: 'TypeScript', level: 85, color: '#3178C6', description: 'Typed JavaScript superset', icon: 'react.png' }, // Using react icon as placeholder for TypeScript
+        { name: 'Tailwind CSS', level: 90, color: '#06B6D4', description: 'Utility-first CSS framework', icon: 'css.png' }
+    ]
+
+    const databases = [
+        { name: 'MongoDB', level: 78, color: '#47A248', description: 'NoSQL document database', icon: 'node.png' }, // Using node icon as placeholder
+        { name: 'MySQL', level: 75, color: '#4479A1', description: 'Relational database system', icon: 'node.png' }, // Using node icon as placeholder
+        { name: 'Git', level: 88, color: '#F05032', description: 'Version control system', icon: 'node.png' } // Using node icon as placeholder
     ]
 
     return(
@@ -161,32 +165,95 @@ export default () => {
                                 </div>
                             ))}
                         </div>
-                    </div>
-
-                    {/* Additional frameworks and tools */}
-                    <div className="space-y-6">
+                    </div>                    {/* Frameworks and tools with enhanced design */}
+                    <div className="space-y-8">
                         <div className="text-center">
-                            <h4 className="text-lg font-bold text-white mb-2">Frameworks & Tools</h4>
-                            <p className="text-primary font-mono text-sm">// Extended toolkit</p>
+                            <h4 className="text-lg font-bold text-white mb-2">Frameworks & Libraries</h4>
+                            <p className="text-primary font-mono text-sm">// Modern development tools</p>
                         </div>
                         
-                        <div className="grid tablet:grid-cols-2 lap:grid-cols-3 gap-4">
+                        <div className="grid tablet:grid-cols-2 lap:grid-cols-3 gap-6">
                             {frameworks.map((framework, index) => (
-                                <div key={index} className="group">
-                                    <div className="bg-gradient-to-r from-gray-2 to-black/30 rounded-lg p-4 border border-primary/10 backdrop-blur-sm transition-all duration-300 group-hover:border-primary/30 group-hover:scale-105">
-                                        <div className="flex justify-between items-center mb-2">
-                                            <span className="font-mono text-white font-semibold">{framework.name}</span>
-                                            <span className="text-xs font-mono" style={{ color: framework.color }}>{framework.level}%</span>
-                                        </div>
-                                        <div className="w-full bg-gray-700 rounded-full h-1.5 overflow-hidden">
+                                <div key={index} className="group cursor-pointer">
+                                    <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] p-6 border border-primary/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:border-primary/40 relative overflow-hidden">                                        {/* Framework header */}
+                                        <div className="text-center mb-4">
                                             <div 
-                                                className="h-full rounded-full transition-all duration-700 ease-out"
-                                                style={{ 
-                                                    width: `${framework.level}%`, 
-                                                    backgroundColor: framework.color,
-                                                    boxShadow: `0 0 8px ${framework.color}40`
-                                                }}
-                                            ></div>
+                                                className="w-[60px] h-[60px] rounded-full flex items-center justify-center mx-auto mb-3 relative group-hover:scale-110 transition-transform duration-300"
+                                                style={{ backgroundColor: framework.color + '20', border: `2px solid ${framework.color}` }}
+                                            >
+                                                <img className="w-8 h-8" src={`/${framework.icon}`} alt={framework.name}/>
+                                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                            <h5 className="font-bold text-white text-lg">{framework.name}</h5>
+                                            <p className="text-xs text-gray-400 font-mono">{framework.description}</p>
+                                        </div>
+
+                                        {/* Progress bar */}
+                                        <div className="space-y-2">
+                                            <div className="flex justify-between text-xs">
+                                                <span className="text-gray-400 font-mono">Proficiency</span>
+                                                <span className="text-primary font-mono">{framework.level}%</span>
+                                            </div>
+                                            <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                                                <div 
+                                                    className="h-full rounded-full transition-all duration-1000 ease-out relative"
+                                                    style={{ 
+                                                        width: `${framework.level}%`, 
+                                                        backgroundColor: framework.color,
+                                                        boxShadow: `0 0 10px ${framework.color}50`
+                                                    }}
+                                                >
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Databases and tools */}
+                    <div className="space-y-8">
+                        <div className="text-center">
+                            <h4 className="text-lg font-bold text-white mb-2">Databases & Tools</h4>
+                            <p className="text-primary font-mono text-sm">// Data management & workflow</p>
+                        </div>
+                        
+                        <div className="grid tablet:grid-cols-2 lap:grid-cols-3 gap-6">
+                            {databases.map((db, index) => (
+                                <div key={index} className="group cursor-pointer">
+                                    <div className="bg-gradient-to-br from-gray-2 to-black/50 rounded-[20px] p-6 border border-primary/20 backdrop-blur-sm transition-all duration-300 group-hover:scale-105 group-hover:border-primary/40 relative overflow-hidden">                                        {/* Database header */}
+                                        <div className="text-center mb-4">
+                                            <div 
+                                                className="w-[60px] h-[60px] rounded-full flex items-center justify-center mx-auto mb-3 relative group-hover:scale-110 transition-transform duration-300"
+                                                style={{ backgroundColor: db.color + '20', border: `2px solid ${db.color}` }}
+                                            >
+                                                <img className="w-8 h-8" src={`/${db.icon}`} alt={db.name}/>
+                                                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                            </div>
+                                            <h5 className="font-bold text-white text-lg">{db.name}</h5>
+                                            <p className="text-xs text-gray-400 font-mono">{db.description}</p>
+                                        </div>
+
+                                        {/* Progress bar */}
+                                        <div className="space-y-2">
+                                            <div className="flex justify-between text-xs">
+                                                <span className="text-gray-400 font-mono">Proficiency</span>
+                                                <span className="text-primary font-mono">{db.level}%</span>
+                                            </div>
+                                            <div className="w-full bg-gray-700 rounded-full h-2 overflow-hidden">
+                                                <div 
+                                                    className="h-full rounded-full transition-all duration-1000 ease-out relative"
+                                                    style={{ 
+                                                        width: `${db.level}%`, 
+                                                        backgroundColor: db.color,
+                                                        boxShadow: `0 0 10px ${db.color}50`
+                                                    }}
+                                                >
+                                                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent animate-pulse"></div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
